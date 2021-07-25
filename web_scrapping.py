@@ -4,7 +4,7 @@
 #monitor a site for new information
 #spider the web to make a database for a search engine
 
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 from bs4 import BeautifulSoup
 
 url = input('Enter - ') #Enter - http://www.dr-chuck.com/page1.html

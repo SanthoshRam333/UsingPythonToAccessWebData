@@ -1,7 +1,7 @@
 #RETRIEVING WEB PAGES
 #Using urllib in Python
 
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 
 fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
 for line in fhand:
@@ -9,7 +9,7 @@ for line in fhand:
 
 #opening a file by urllib
 
-import urllib.request, urllib.parse, urllib.error
+import urllib.request
 
 fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
 

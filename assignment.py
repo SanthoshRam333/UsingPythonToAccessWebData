@@ -1,16 +1,22 @@
-#The basic outline of this problem is to read the file, look for
-#integers using the re.findall(), looking for a regular expression of
-#'[0-9]+' and then converting the extracted strings to integers and
-# summing up the integers.
-import re
-handle = open('regex_sum_1200111.txt')
-numlist = list()
-for line in handle:
-    line = line.rstrip()
-    line = re.findall('[0-9]+', line)
-    if len(line) < 1 :
-        continue
-    for i in range(len(line)):
-        num = float(line[i])
-        numlist.append(num)
-print('Sum:',sum(numlist))
+#
+import urllib
+from bs4 import BeautifulSoup
+url = raw_input('Enter Url: ')
+count = int(raw_input("Enter count: "))
+position = int(raw_input("Enter position:"))
+for i in range(count):
+    html = urllib.urlopen(url).read()
+    soup = BeautifulSoup(html)
+
+    tags = soup('a')
+    s = []
+    t = []
+    for tag in tags:
+        x = tag.get('href', None)
+        s.append(x)
+        y = tag.text
+        t.append(y)
+
+    print s[position-1]
+    print t[position-1]
+    url = s[position-1]
